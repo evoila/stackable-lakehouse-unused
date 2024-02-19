@@ -18,11 +18,15 @@
 ![Alt-Text](screenshots/setup_k8s_step_4.jpg "Step 4")
 - Step 5: In your preferred CLI (we will use `bash` here), make sure you have everthing install listed in the [readme](/README.md) and set the kube-config via `export KUBECONFIG=path/to/kubeconfig`. Append this command to your `bashrc` to have it applied on start-up
 - Step 6: In case you work on a cluster which is alread configured, you're done (type `kubectl get pods` to see running pods). Otherwise, execute the following command:
-    kubectl label --overwrite ns default pod-security.kubernetes.io/enforce=privileged pod-security.kubernetes.io/warn=baseline pod-security.kubernetes.io/audit=baseline
+  ```
+  kubectl label --overwrite ns default pod-security.kubernetes.io/enforce=privileged pod-security.kubernetes.io/warn=baseline pod-security.kubernetes.io/audit=baseline
+  ```
   This is needed to create pods regardless of possible privilege escalations, but shows a warning if there are any. See [this link](https://kubernetes.io/docs/concepts/security/pod-security-standards/) for further information
 - Step 7: Add the Stackable Helm repository and install the basic operators, which are needed for almost everything:
-    helm repo add stackable-stable https://repo.stackable.tech/repository/helm-stable/
-    helm install --wait commons-operator stackable-stable/commons-operator --version 23.11.0
-    helm install --wait secret-operator stackable-stable/secret-operator --version 23.11.0
-    helm install --wait listener-operator stackable-stable/listener-operator --version 23.11.0
+  ```
+  helm repo add stackable-stable https://repo.stackable.tech/repository/helm-stable/
+  helm install --wait commons-operator stackable-stable/commons-operator --version 23.11.0
+  helm install --wait secret-operator stackable-stable/secret-operator --version 23.11.0
+  helm install --wait listener-operator stackable-stable/listener-operator --version 23.11.0
+  ```
 - Step 8: Be proud, you are ready to use kubernetes and stackable :)
