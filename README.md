@@ -3,7 +3,7 @@ This repository documents the deployment of a production-ready lakehouse on kube
 The deployment is helm-based and all corresponding files are located in the [helm-deployment folder](helm-deployment).
 A step-by-step-guide is located in the [guide folder](guide).
 
-#Prerequisites
+# Prerequisites
 You need a k8s-cluster with the following resources:
 - 10 nodes with 4 cores/8 threads, 20GB RAM and 30GB HDD, i.e. Standard\_D4\_v2 in Azure
 - multiple persistent volumes, 1TB total
