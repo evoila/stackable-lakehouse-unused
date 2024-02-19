@@ -9,7 +9,7 @@ You need a k8s-cluster with the following resources:
 - multiple persistent volumes, 1TB total
 For a guide how to setup this in Azure/the evoila lab, see [here](guide/setup_k8s.md).
 
-Helm is needed, to install it follow [these official instructions](https://helm.sh/docs/intro/install/).
+Helm and kubectl is needed, to install it follow [these official instructions for kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl) and [those official instructions for helm](https://helm.sh/docs/intro/install/).
 You also need stackablectl, for the installation follow [this official guide](https://docs.stackable.tech/management/stable/stackablectl/installation).
 
 The necessary operators and everything else is explained in the mentioned [guide folder](guide).
